@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="ISettingPage.cs" />
     <Compile Include="ISettingsEditorViewManager.cs" />
+    <Compile Include="ISettingsPageNode.cs" />
     <Compile Include="TreeHelper.cs" />
     <Compile Include="ITreeModel.cs" />
     <Compile Include="ITreeNode.cs" />

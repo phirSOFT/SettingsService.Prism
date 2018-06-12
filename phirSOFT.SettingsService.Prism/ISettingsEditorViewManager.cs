@@ -16,9 +16,9 @@ namespace phirSOFT.SettingsService.Prism
         /// <summary>
         /// Registers an editor view to this manager.
         /// </summary>
-        /// <param name="editorViewType">The type of the editor view.</param>
         /// <param name="editorUri">The uri to this editor View. This Uri is used to place the edtitor in the editor pages tree.</param>
-        void RegisterEditorView(Type editorViewType, Uri editorUri);
+        /// <param name="editorPageUri">The uri to navigate to the editor page.</param>
+        void RegisterEditorPage(Uri editorUri, Uri editorPageUri);
 
         /// <summary>
         /// Requests the editor manager to navigate to the specific editor page.
@@ -34,5 +34,10 @@ namespace phirSOFT.SettingsService.Prism
         /// <param name="resolver">This function resolves the view model for the editor view in the tree.</param>
         /// <param name="canResolve">This function determines, wheter the resolver can resolve a model or not.</param>
         void RegisterViewModelResolver(Uri resolveUri, Func<Uri, object> resolver, Func<Uri, bool> canResolve);
+
+        /// <summary>
+        /// Stores the root nodes of the setting page tree
+        /// </summary>
+        IReadOnlyCollection<ISettingsPageNode> RootNodes { get; }
     }
 }
